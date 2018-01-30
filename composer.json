@@ -1,37 +1,46 @@
 {
-  "name": "ahmeti/trader",
-  "description": "Ahmeti Trader",
-  "homepage": "https://github.com/ahmeti/trader",
-  "keywords": ["coin", "crypto", "trader", "laravel"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Ahmet Imamoglu",
-      "email": "ahmet363@gmail.com",
-      "role": "Developer",
-      "homepage": "https://ahmetimamoglu.com.tr"
-    }
-  ],
-  "require": {
-    "php": ">=7.0.0",
-    "illuminate/http": "5.5.*"
-  },
-  "require-dev": {},
-  "autoload": {
-    "psr-0": {
-      "Ahmeti\\Trader": "src/"
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0.0-dev"
+    "name": "ahmeti/trader",
+    "description": "Ahmeti Trader",
+    "homepage": "https://github.com/ahmeti/trader",
+    "keywords": [
+        "coin",
+        "crypto",
+        "trader",
+        "laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmet Imamoglu",
+            "email": "ahmet363@gmail.com",
+            "role": "Developer",
+            "homepage": "https://ahmetimamoglu.com.tr"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/http": "5.5.*"
     },
-    "laravel": {
-      "aliases": {
-      },
-      "providers": [
-        "Ahmeti\\Trader\\Providers\\BinanceServiceProvider"
-      ]
-    }
-  }
+    "require-dev": {},
+    "autoload": {
+        "psr-0": {
+            "Ahmeti\\Trader": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0-dev"
+        },
+        "laravel": {
+            "aliases": {},
+            "providers": [
+                "Ahmeti\\Trader\\Providers\\BinanceServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
