@@ -12,6 +12,7 @@
       "homepage": "https://ahmetimamoglu.com.tr"
     }
   ],
+  "minimum-stability": "dev",
   "require": {
     "php": ">=7.0.0",
     "illuminate/http": "5.5.*"
