@@ -19,28 +19,24 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "illuminate/http": "5.5.*"
+        "jaggedsoft/php-binance-api": "dev-master"
     },
     "require-dev": {},
+    "config": {
+        "optimize-autoloader": true,
+        "minimum-stability": "dev"
+    },
     "autoload": {
         "psr-0": {
             "Ahmeti\\Trader": "src/"
         }
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.0-dev"
-        },
         "laravel": {
             "aliases": {},
             "providers": [
                 "Ahmeti\\Trader\\Providers\\BinanceServiceProvider"
             ]
         }
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
