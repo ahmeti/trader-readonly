@@ -3,9 +3,9 @@
 namespace Ahmeti\Trader\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Ahmeti\Trader\Trader;
+use Ahmeti\Trader\Markets\Binance;
 
-class TraderServiceProvider extends ServiceProvider
+class BinanceServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -31,8 +31,8 @@ class TraderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('ahmeti-trader', function () {
-            return new Trader();
+        $this->app->singleton('ahmeti-trader-binance', function () {
+            return new Binance();
         });
     }
 
@@ -43,6 +43,6 @@ class TraderServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['ahmeti-trader'];
+        return ['ahmeti-trader-binance'];
     }
 }
