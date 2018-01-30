@@ -21,7 +21,11 @@ class BinanceServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        /*
+        $this->publishes([
+            __DIR__.'/../Configs/trader.php' => config_path('trader.php'),
+        ]);
+        */
     }
 
     /**
