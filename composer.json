@@ -18,7 +18,10 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0"
+        "php": ">=7.0.0",
+        "ratchet/pawl": "^0.3.0",
+        "react/socket": "^1.0 || ^0.8 || ^0.7",
+        "ratchet/rfc6455": "^0.2.3"
     },
     "require-dev": {},
     "config": {
