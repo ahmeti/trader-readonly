@@ -18,8 +18,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "jaggedsoft/php-binance-api": "dev-master"
+        "php": ">=7.0.0"
     },
     "require-dev": {},
     "config": {
