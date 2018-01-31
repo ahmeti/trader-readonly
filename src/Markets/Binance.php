@@ -2,7 +2,7 @@
 
 namespace Ahmeti\Trader\Markets;
 
-use Binance\API;
+use Ahmeti\Trader\Apis\Binance as Api;
 use Illuminate\Support\Facades\Mail;
 
 class Binance {
@@ -12,7 +12,7 @@ class Binance {
     public function __construct()
     {
         if(is_null($this->api)){
-            $this->api = new API(env('BINANCE_API_KEY'), env('BINANCE_API_SECRET'));
+            $this->api = new Api(env('BINANCE_API_KEY'), env('BINANCE_API_SECRET'));
         }
     }
 
@@ -31,18 +31,17 @@ class Binance {
 
     public function orderStatus($coinCode, $orderId)
     {
-        $orderStatus = $this->api->orderStatus($coinCode, $orderId);
-
-        if($orderStatus['origQty'] === $orderStatus['executedQty']){
-            return true;
-        }
-
-        return false;
+        return  $this->api->orderStatus($coinCode, $orderId);
     }
 
     public function tradeHistory($coinCode)
     {
         return $this->api->history($coinCode);
+    }
+
+    public function tradeHistoryByOrderId($coinCode, $orderId)
+    {
+        $items = $this->api->history($coinCode);
     }
 
     public function marketBuy($coinCode, $quantity)
