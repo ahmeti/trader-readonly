@@ -22,9 +22,9 @@ class Binance {
     public function __construct($api_key = '', $api_secret = '', $options = ["useServerTime"=>false]) {
         $this->api_key = $api_key;
         $this->api_secret = $api_secret;
-        if ( isset($options['useServerTime']) && $options['useServerTime'] ) {
+        //if ( isset($options['useServerTime']) && $options['useServerTime'] ) {
             $this->useServerTime();
-        }
+        //}
     }
     public function buy($symbol, $quantity, $price, $type = "LIMIT", $flags = []) {
         return $this->order("BUY", $symbol, $quantity, $price, $type, $flags);
@@ -190,6 +190,8 @@ class Binance {
         }
         if ( isset($flags['stopPrice']) ) $opt['stopPrice'] = $flags['stopPrice'];
         if ( isset($flags['icebergQty']) ) $opt['icebergQty'] = $flags['icebergQty'];
+        $opt['newOrderRespType'] = 'FULL';
+
         return $this->signedRequest("v3/order", $opt, "POST");
     }
 
