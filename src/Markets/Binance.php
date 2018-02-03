@@ -126,7 +126,7 @@ class Binance {
         {
             $message->from(env('MAIL_USERNAME'), config('app.name'));
             $message->subject('BİLGİ -> COIN BOT');
-            $message->to(env('ALERT_MAIL'));
+            $message->to(env('TRADER_ALERT_MAIL'));
         });
     }
 }
