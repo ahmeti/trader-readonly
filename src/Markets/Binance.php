@@ -9,11 +9,9 @@ class Binance {
 
     private $api;
 
-    public function __construct()
+    public function setApiKeys($apiKey, $apiSecret)
     {
-        if(is_null($this->api)){
-            $this->api = new Api(env('BINANCE_API_KEY'), env('BINANCE_API_SECRET'));
-        }
+        $this->api = new Api($apiKey, $apiSecret);
     }
 
     public function checkOpenOrder($coinCode, $orderId)
