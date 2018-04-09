@@ -127,4 +127,10 @@ class Binance {
             $message->to(env('TRADER_ALERT_MAIL'));
         });
     }
+
+    public function balances()
+    {
+        $ticker = $this->api->prices();
+        return $this->api->balances($ticker);
+    }
 }
