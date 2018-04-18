@@ -64,6 +64,11 @@ class Binance {
         return $this->api->depositHistory();
     }
 
+    public function withdrawHistory()
+    {
+        return $this->api->withdrawHistory();
+    }
+
     public function tradeHistoryByOrderId($coinCode, $orderId)
     {
         $items = $this->api->history($coinCode);
